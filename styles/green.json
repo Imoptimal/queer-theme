@@ -1,0 +1,13 @@
+{
+  "$schema": "https://wp.org",
+  "version": 3,
+  "title": "Ocean Blue",
+  "settings": {
+    "color": {
+      "palette": [
+				{ "slug": "bg-color", "color": "#09E001", "name": "Green Background" },
+				{ "slug": "dark-shade", "color": "#199C15", "name": "Darker Green Shade" }
+			]
+    }
+  }
+}

@@ -10,3 +10,28 @@ Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://gnu.org
 */
+
+* {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+html {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 0 10px;
+}
