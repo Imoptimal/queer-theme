@@ -30,9 +30,10 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
          * Core theme configuration and support rules.
          */
         public function theme_setup() : void {
+            // Enable FSE
+            add_theme_support( 'block-templates' );
             // Enable block editor styles to match backend with frontend layout
             add_theme_support( 'editor-styles' );
-
             // Load translation text-domain for internationalization
             load_theme_textdomain( 'my-custom-theme', get_template_directory() . '/languages' );
         }
