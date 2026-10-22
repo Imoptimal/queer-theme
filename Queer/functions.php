@@ -22,6 +22,7 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
         public function __construct() {
             add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+            add_action('enqueue_block_editor_assets', array( $this, 'enqueue_editor_effects' ) );
             add_shortcode( 'current_year', array( $this, 'get_current_year' ) );
             add_filter( 'render_block', array( $this, 'append_developer_credits' ), 10, 2 );
         }
@@ -59,6 +60,19 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
                     'strategy'  => 'defer',                                     
                     'in_footer' => true,                                        
                 )
+            );
+        }
+
+        /**
+         * Handles enqueueing editor scripts.
+         */
+        public function enqueue_editor_scripts(): void {
+            wp_enqueue_script(
+                'queer-editor-script',
+                get_template_directory_uri() . '/assets/js/editor.js',
+                array( 'wp-dom-ready', 'wp-element' ),
+                wp_get_theme()->get( 'Version' ),
+                true
             );
         }
 

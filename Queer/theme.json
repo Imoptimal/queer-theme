@@ -5,9 +5,9 @@
 		"appearanceTools": true,
 		"color": {
 			"palette": [
-				{ "slug": "bg-color", "color": "#f00404", "name": "Default Red Background" },
-				{ "slug": "text-color", "color": "#050505", "name": "Default Text Color" },
-				{ "slug": "link-color", "color": "#f7f7f7", "name": "Default Link Color" },
+				{ "slug": "hdr-ftr-color", "color": "#181b22", "name": "Header/footer Background Color" },
+				{ "slug": "text-color", "color": "#f7f7f7", "name": "Normal Text Color" },
+				{ "slug": "bg-color", "color": "#1E222B", "name": "Background Color for All Other Elements" },
 				{ "slug": "dark-shade", "color": "#a71616", "name": "Default Darker Red Shade" }
 			]
 		}
