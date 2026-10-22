@@ -22,7 +22,7 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
         public function __construct() {
             add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-            add_action('enqueue_block_editor_assets', array( $this, 'enqueue_editor_effects' ) );
+            add_action('enqueue_block_editor_assets', array( $this, 'enqueue_editor_scripts' ) );
             add_shortcode( 'current_year', array( $this, 'get_current_year' ) );
             add_filter( 'render_block', array( $this, 'append_developer_credits' ), 10, 2 );
         }
