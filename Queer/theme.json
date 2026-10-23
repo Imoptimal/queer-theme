@@ -43,22 +43,8 @@
 		"elements": {
 			"heading": {
 				"typography": { "fontWeight": "700", "lineHeight": "2" }
-			},
-			"link": {
-				"color": { 
-				"text": "var(--wp--preset--color--link-color)" 
-			},
-			"typography": {
-				"textShadow": "2px 0 var(--wp--preset--color--dark-shade), -2px 0 var(--wp--preset--color--dark-shade), 0 2px var(--wp--preset--color--dark-shade), 0 -2px var(--wp--preset--color--dark-shade), 1px 1px var(--wp--preset--color--dark-shade), -1px -1px var(--wp--preset--color--dark-shade), 1px -1px var(--wp--preset--color--dark-shade), -1px 1px var(--wp--preset--color--dark-shade)"
-			},
-			"button": {
-				"color": {
-					"background": "var(--wp--preset--color--text-color)",
-					"text": "var(--wp--preset--color--red-bg)"
-				},
-				"spacing": { "padding": { "top": "15px", "bottom": "5px", "left": "5px", "right": "5px" } }
-				}
 			}
-		}
+
+			}
 	}
 }
