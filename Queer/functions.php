@@ -22,9 +22,6 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
         public function __construct() {
             add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-            add_action('enqueue_block_editor_assets', array( $this, 'enqueue_editor_scripts' ) );
-            add_shortcode( 'current_year', array( $this, 'get_current_year' ) );
-            add_filter( 'render_block', array( $this, 'append_developer_credits' ), 10, 2 );
         }
 
         /**
@@ -62,42 +59,7 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
                 )
             );
         }
-
-        /**
-         * Handles enqueueing editor scripts.
-         */
-        public function enqueue_editor_scripts(): void {
-            wp_enqueue_script(
-                'queer-editor-script',
-                get_template_directory_uri() . '/assets/js/editor.js',
-                array( 'wp-dom-ready', 'wp-element' ),
-                wp_get_theme()->get( 'Version' ),
-                true
-            );
-        }
-
-        /**
-         * Prints current year in the footer dinamically
-         */
-        public function get_current_year() : string {
-            return date( 'Y' );
-        }
-
-         /**
-         * Adds "Made by Imoptimal" at the bottom of the page (in footer)
-         */
-        public function append_developer_credits( string $block_content, array $block ) : string {
-            if ( isset( $block['attrs']['slug'] ) && 'footer' === $block['attrs']['slug'] ) {
-                $developer_html = '<p class="has-text-align-center developer-credits" style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">';
-                $developer_html .= 'Made by <a href="https://imoptimal.com" target="_blank" rel="nofollow">Imoptimal</a>';
-                $developer_html .= '</p>';
-                $block_content = str_replace( '</footer>', $developer_html . '</footer>', $block_content );
-            }
-
-            return $block_content;
-        }
     }
-
     // Initialize the theme class instance
     new Queer_Theme_Setup();
 

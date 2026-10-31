@@ -36,4 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
         behavior: 'smooth'
       });
     });
+
+    // 3.
+  const footer = document.querySelector('footer, .wp-block-template-part.site-footer, .site-footer');
+
+  // Check if footer exists and credits haven't already been added
+  if (footer && !footer.querySelector('.developer-credits')) {
+    const developerHtml = `
+      <p class="has-text-align-center developer-credits" style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">
+        Made by <a href="https://imoptimal.com" target="_blank" rel="nofollow">Imoptimal</a>
+      </p>
+    `;
+
+    // Insert the HTML right before the end of the footer element
+    footer.insertAdjacentHTML('beforeend', developerHtml);
+  }
   });
