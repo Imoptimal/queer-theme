@@ -22,6 +22,7 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
         public function __construct() {
             add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+            add_filter( 'body_class', [ $this, 'add_queer_class' ] );
         }
 
         /**
@@ -58,6 +59,17 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
                     'in_footer' => true,                                        
                 )
             );
+        }
+        
+        /**
+         * Add custom classes to the WordPress body tag.
+         *
+         * @param array $classes Existing body classes.
+         * @return array Modified body classes.
+         */
+        public function add_queer_class( array $classes ) : array {
+            $classes[] = 'queer';
+            return $classes;
         }
     }
     // Initialize the theme class instance

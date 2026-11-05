@@ -63,7 +63,13 @@ main {
   padding: 0 10px;
 }
 
-.wp-site-blocks a {
+.queer .wp-site-blocks {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.queer a {
   background: linear-gradient(90deg, #ff4d94 0%, #d580ff 25%, #4da6ff 50%, #33cc99 75%, #ffcc00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,8 +82,8 @@ main {
   font-weight: bold;
 }
 
-.wp-site-blocks a.force-hover,
-.wp-site-blocks a:hover {
+.queer a.force-hover,
+.queer a:hover {
   background: linear-gradient(90deg, #ffcc00 0%, #33cc99 25%, #4da6ff 50%, #d580ff 75%, #ff4d94 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -87,17 +93,17 @@ main {
   filter: brightness(1.15);
 }
 
-.wp-site-blocks a.force-focus,
-.wp-site-blocks a:focus-visible {
+.queer a.force-focus,
+.queer a:focus-visible {
   outline: 3px solid #4da6ff;
   outline-offset: 4px;
   border-radius: 2px;
 }
 
-.wp-site-blocks button,
-.wp-site-blocks input[type=button], 
-.wp-site-blocks input[type=submit], 
-.wp-site-blocks input[type=reset] {
+.queer button,
+.queer input[type=button], 
+.queer input[type=submit], 
+.queer input[type=reset] {
   background: linear-gradient(90deg, #ff4d94 0%, #d580ff 25%, #4da6ff 50%, #33cc99 75%, #ffcc00 100%);
   color: #000000;
   font-weight: bold;
@@ -105,38 +111,38 @@ main {
   padding: 25px;
 }
 
-.wp-site-blocks input.force-hover,
-.wp-site-blocks input:hover {
+.queer input.force-hover,
+.queer input:hover {
   outline: 3px solid #4da6ff;
   outline-offset: 4px;
 }
 
-.wp-site-blocks button.force-hover,
-.wp-site-blocks input[type=button].force-hover, 
-.wp-site-blocks input[type=submit].force-hover, 
-.wp-site-blocks input[type=reset].force-hover,
-.wp-site-blocks button:hover,
-.wp-site-blocks input[type=button]:hover, 
-.wp-site-blocks input[type=submit]:hover, 
-.wp-site-blocks input[type=reset]:hover {
+.queer button.force-hover,
+.queer input[type=button].force-hover, 
+.queer input[type=submit].force-hover, 
+.queer input[type=reset].force-hover,
+.queer button:hover,
+.queer input[type=button]:hover, 
+.queer input[type=submit]:hover, 
+.queer input[type=reset]:hover {
   background: linear-gradient(90deg, #ffcc00 0%, #33cc99 25%, #4da6ff 50%, #d580ff 75%, #ff4d94 100%);
 }
 
-.wp-site-blocks button.force-focus,
-.wp-site-blocks input.force-focus,
-.wp-site-blocks input[type=button].force-focus, 
-.wp-site-blocks input[type=submit].force-focus, 
-.wp-site-blocks input[type=reset].force-focus,
-.wp-site-blocks button:focus-visible,
-.wp-site-blocks input:focus-visible,
-.wp-site-blocks input[type=button]:focus-visible, 
-.wp-site-blocks input[type=submit]:focus-visible, 
-.wp-site-blocks input[type=reset]:focus-visible {
+.queer button.force-focus,
+.queer input.force-focus,
+.queer input[type=button].force-focus, 
+.queer input[type=submit].force-focus, 
+.queer input[type=reset].force-focus,
+.queer button:focus-visible,
+.queer input:focus-visible,
+.queer input[type=button]:focus-visible, 
+.queer input[type=submit]:focus-visible, 
+.queer input[type=reset]:focus-visible {
   outline: 3px solid #4da6ff;
   outline-offset: 4px;
 }
 
-.wp-site-blocks .queer-header-wrapper {
+.queer .header-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -153,11 +159,11 @@ main {
   background: linear-gradient(180deg, #272727 0%, #1a1a1a 100%);
 }
 
-.wp-site-blocks .queer-header-content {
+.queer .header-content {
   padding-bottom: 56px; /* Space inside header so content is clear of the diagonal bottom */
 }
 
-.wp-site-blocks .rainbow-container {
+.queer .rainbow-container {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -176,7 +182,7 @@ main {
 }
 
 /* Expanding Track with Continuous Gradient & Black Framing Borders */
-.wp-site-blocks .rainbow-bar-track {
+.queer .rainbow-bar-track {
   width: 100%;
   height: 100%;
   transform-origin: left center;
@@ -197,23 +203,24 @@ main {
   );
 }
 
-.wp-site-blocks .queer-main {
+.queer main {
+  min-height: 75vh;
   padding-top: 175px;
   background-color: #0d0d0d;
 }
 
-.wp-site-blocks .queer-footer-wrapper {
+.queer .footer-wrapper {
   clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
   width: 100%;
   background: linear-gradient(180deg, #1a1a1a 0%, #272727 100%);
   margin-bottom: -80px;
 }
 
-.wp-site-blocks .queer-footer-content {
+.queer .footer-content {
   padding-top: 80px !important; 
 }
 
-.wp-site-blocks .developer-credits {
+.queer .developer-credits {
   text-align: right;
   padding-right: 10px;
 }
