@@ -22,6 +22,7 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
         public function __construct() {
             add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+            add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
             add_filter( 'body_class', [ $this, 'add_queer_class' ] );
         }
 
@@ -60,7 +61,38 @@ if ( ! class_exists( 'Queer_Theme_Setup' ) ) :
                 )
             );
         }
-        
+
+        /**
+         * Enqueue custom editor stylesheet and JavaScript file.
+         */
+        public function enqueue_editor_assets() : void {
+            $theme_uri = get_template_directory_uri();
+            $theme_dir = get_template_directory();
+
+            // 1. Load custom CSS inside the editor iframe
+            $css_path = '/assets/css/editor.css';
+            if ( file_exists( $theme_dir . $css_path ) ) {
+                wp_enqueue_style(
+                    'queer-editor-styles',
+                    $theme_uri . $css_path,
+                    [],
+                    filemtime( $theme_dir . $css_path )
+                );
+            }
+
+            // 2. Load custom JS strictly for editor logic (e.g., iframe body classes, block filters)
+            /*$js_path = '/assets/js/editor.js';
+            if ( file_exists( $theme_dir . $js_path ) ) {
+                wp_enqueue_script(
+                    'queer-editor-scripts',
+                    $theme_uri . $js_path,
+                    [ 'wp-blocks', 'wp-dom-ready', 'wp-hooks' ],
+                    filemtime( $theme_dir . $js_path ),
+                    true
+                );
+            }*/
+        }
+
         /**
          * Add custom classes to the WordPress body tag.
          *

@@ -1,0 +1,12 @@
+.block-editor-iframe__body {
+    background-color: #0d0d0d;
+    text-align: center;
+}
+
+.wp-block-button__link {
+  background: linear-gradient(90deg, #ff4d94 0%, #d580ff 25%, #4da6ff 50%, #33cc99 75%, #ffcc00 100%);
+  color: #000000;
+  font-weight: bold;
+  border-radius: 54% 46% 78% 22% / 47% 24% 76% 53%;
+  padding: 25px;
+}
