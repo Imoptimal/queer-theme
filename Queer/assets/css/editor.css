@@ -1,11 +1,25 @@
+:root {
+  /* Theme colors */
+  --light-grey: #272727;
+  --dark-grey: #1a1a1a;
+  --white: #f2f2f2;
+  --black: #000000;
+  --rainbow-pink: #ff4d94;
+  --rainbow-purple: #d580ff;
+  --rainbow-blue: #4da6ff;
+  --rainbow-green: #33cc99;
+  --rainbow-yellow: #ffcc00;
+}
+
 .block-editor-iframe__body {
     background-color: #0d0d0d;
     text-align: center;
+    color: var(--white);
 }
 
 .wp-block-button__link {
-  background: linear-gradient(90deg, #ff4d94 0%, #d580ff 25%, #4da6ff 50%, #33cc99 75%, #ffcc00 100%);
-  color: #000000;
+  background: linear-gradient(90deg, var(--rainbow-pink) 0%, var(--rainbow-purple) 25%, var(--rainbow-blue) 50%, var(--rainbow-green) 75%, var(--rainbow-yellow) 100%);
+  color: var(--black);
   font-weight: bold;
   border-radius: 54% 46% 78% 22% / 47% 24% 76% 53%;
   padding: 25px;

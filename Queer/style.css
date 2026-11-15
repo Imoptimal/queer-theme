@@ -16,6 +16,16 @@ License URI: http://gnu.org
   --diagonal-offset: 40px;
   /* Thickness of the visible rainbow progress bar */
   --bar-thickness: 6px;
+  /* Theme colors */
+  --light-grey: #272727;
+  --dark-grey: #1a1a1a;
+  --white: #f2f2f2;
+  --black: #000000;
+  --rainbow-pink: #ff4d94;
+  --rainbow-purple: #d580ff;
+  --rainbow-blue: #4da6ff;
+  --rainbow-green: #33cc99;
+  --rainbow-yellow: #ffcc00;
 }
 
 /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -39,7 +49,7 @@ html, body {
   transition: all 0.25s;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
-  color: #f2f2f2;
+  color: var(--white);
 }
 
 html {
@@ -70,7 +80,7 @@ main {
 }
 
 .queer a {
-  background: linear-gradient(90deg, #ff4d94 0%, #d580ff 25%, #4da6ff 50%, #33cc99 75%, #ffcc00 100%);
+  background: linear-gradient(90deg, var(--rainbow-pink) 0%, var(--rainbow-purple) 25%, var(--rainbow-blue) 50%, var(--rainbow-green) 75%, var(--rainbow-yellow) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,7 +94,7 @@ main {
 
 .queer a.force-hover,
 .queer a:hover {
-  background: linear-gradient(90deg, #ffcc00 0%, #33cc99 25%, #4da6ff 50%, #d580ff 75%, #ff4d94 100%);
+  background: linear-gradient(90deg, var(--rainbow-yellow) 0%, var(--rainbow-green) 25%, var(--rainbow-blue) 50%, var(--rainbow-purple) 75%, var(--rainbow-pink) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,7 +105,7 @@ main {
 
 .queer a.force-focus,
 .queer a:focus-visible {
-  outline: 3px solid #4da6ff;
+  outline: 3px solid var(--rainbow-blue);
   outline-offset: 4px;
   border-radius: 2px;
 }
@@ -103,17 +113,22 @@ main {
 .queer button,
 .queer input[type=button], 
 .queer input[type=submit], 
-.queer input[type=reset] {
-  background: linear-gradient(90deg, #ff4d94 0%, #d580ff 25%, #4da6ff 50%, #33cc99 75%, #ffcc00 100%);
-  color: #000000;
+.queer input[type=reset],
+.queer .wp-block-button__link {
+  background: linear-gradient(90deg, var(--rainbow-pink) 0%, var(--rainbow-purple) 25%, var(--rainbow-blue) 50%, var(--rainbow-green) 75%, var(--rainbow-yellow) 100%);
+  color: var(--black);
   font-weight: bold;
   border-radius: 54% 46% 78% 22% / 47% 24% 76% 53%;
   padding: 25px;
 }
 
+.queer .wp-block-button__link {
+  -webkit-text-fill-color: unset;
+}
+
 .queer input.force-hover,
 .queer input:hover {
-  outline: 3px solid #4da6ff;
+  outline: 3px solid var(--rainbow-blue);
   outline-offset: 4px;
 }
 
@@ -121,11 +136,13 @@ main {
 .queer input[type=button].force-hover, 
 .queer input[type=submit].force-hover, 
 .queer input[type=reset].force-hover,
+.queer .wp-block-button__link.force-hover,
 .queer button:hover,
 .queer input[type=button]:hover, 
 .queer input[type=submit]:hover, 
-.queer input[type=reset]:hover {
-  background: linear-gradient(90deg, #ffcc00 0%, #33cc99 25%, #4da6ff 50%, #d580ff 75%, #ff4d94 100%);
+.queer input[type=reset]:hover,
+.queer .wp-block-button__link:hover {
+  background: linear-gradient(90deg, var(--rainbow-yellow) 0%, var(--rainbow-green) 25%, var(--rainbow-blue) 50%, var(--rainbow-purple) 75%, var(--rainbow-pink) 100%);
 }
 
 .queer button.force-focus,
@@ -133,12 +150,14 @@ main {
 .queer input[type=button].force-focus, 
 .queer input[type=submit].force-focus, 
 .queer input[type=reset].force-focus,
+.queer .wp-block-button__link.force-focus,
 .queer button:focus-visible,
 .queer input:focus-visible,
 .queer input[type=button]:focus-visible, 
 .queer input[type=submit]:focus-visible, 
-.queer input[type=reset]:focus-visible {
-  outline: 3px solid #4da6ff;
+.queer input[type=reset]:focus-visible,
+.queer .wp-block-button__link:focus-visible {
+  outline: 3px solid var(--rainbow-blue);
   outline-offset: 4px;
 }
 
@@ -156,7 +175,7 @@ main {
   100% calc(100% - var(--diagonal-offset)), 
   0 100%
   );
-  background: linear-gradient(180deg, #272727 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, var(--light-grey) 0%, var(--dark-grey) 100%);
 }
 
 .queer .header-content {
@@ -190,13 +209,13 @@ main {
   will-change: transform;
   /* Layered CSS: Top Black Line + Rainbow Gradient + Bottom Black Line */
   background: 
-  linear-gradient(to bottom, #000 1px, transparent 1px),
-  linear-gradient(to bottom, transparent calc(100% - 1px), #000 calc(100% - 1px)),
+  linear-gradient(to bottom, var(--black) 1px, transparent 1px),
+  linear-gradient(to bottom, transparent calc(100% - 1px), var(--black) calc(100% - 1px)),
   linear-gradient(
   90deg, 
   #FF3B30 0%, 
   #FF9500 20%, 
-  #FFCC00 40%, 
+  var(--rainbow-yellow) 40%, 
   #34C759 60%, 
   #007AFF 80%, 
   #AF52DE 100%
